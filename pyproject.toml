@@ -1,0 +1,31 @@
+[project]
+name = "resume-evaluator"
+version = "0.1.0"
+description = "Evaluate a resume (PDF/DOCX) against an HR criteria list using an LLM and report a match percentage"
+authors = [
+    { name = "Sunil-prajapati", email = "sp735705@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "groq>=1.7.0",
+    "pydantic>=2.14.3",
+    "pypdf>=7.0.1",
+    "python-docx>=1.2.0",
+    "python-dotenv>=1.2.4",
+]
+
+[project.scripts]
+resume-evaluator = "resume_evaluator.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+
+[tool.pytest.ini_options]
+markers = ["integration: calls the real Groq API (run with: uv run pytest -m integration)"]
+addopts = "-m 'not integration'"

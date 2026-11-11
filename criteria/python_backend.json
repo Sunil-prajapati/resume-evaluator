@@ -1,0 +1,12 @@
+{
+  "role": "Python Backend Developer",
+  "min_total_years": 2,
+  "category_weights": {"skills": 50, "experience": 30, "projects": 20},
+  "requirements": [
+    {"category": "skills", "description": "Python", "must_have": true, "weight": 5},
+    {"category": "skills", "description": "FastAPI or Flask", "weight": 4},
+    {"category": "skills", "description": "SQL databases", "weight": 3},
+    {"category": "experience", "description": "Worked on production backend systems", "must_have": true, "weight": 5},
+    {"category": "projects", "description": "Built and deployed a REST API", "weight": 4}
+  ]
+}
